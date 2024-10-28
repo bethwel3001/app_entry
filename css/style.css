@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* for dark/light vibe */
+body.dark-theme {
+    background-color: #222;
+    color: white;
+}
+
+body.dark-theme nav {
+    background: #444;
+}
+
+body.dark-theme .btn {
+    color: white;
+}
+/* ............. */
+nav {
+    background: #333;
+    color: white;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-center a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.navbar-right a {
+    margin-left: 10px;
+}
+
+.btn {
+    border-radius: 35px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.signup {
+    background-color: blue;
+}
+
+.login {
+    background-color: green;
+}
+
+.theme-icon {
+    cursor: pointer;
+    margin-right: 20px;
+}
+.theme-icon i{
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.intro h1 {
+    margin-bottom: 20px;
+}
+
+.intro {
+    text-align: center; /* Center text */
+    margin-top: 50px; /* Space above */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center buttons */
+}
+
+.floating-btn {
+    padding: 15px 20px;
+    border-radius: 50px;
+    margin-left: 10px; /* Space between buttons */
+    text-decoration: none;
+    color: white;
+}
+
+/* hide on big  screen */
+.navbar-mobile{
+    visibility: hidden;
+}
+@media (max-width: 768px) {
+    .navbar-center {
+        display: none;
+    }
+
+    .navbar-right {
+        display: none; /* Hide right buttons on small screen */
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 24px;
+        color: white;
+    }
+
+    /* set to visible */
+    .navbar-mobile{
+        visibility: visible;
+    }
+    .navbar-mobile {
+        text-align: center;
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        width: 95%;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        border-radius: 30px;
+        border: 2px solique #12cc0b;
+    }
+
+    .navbar-mobile a {
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+    }
+    .navbar-mobile .close {
+        cursor: pointer;
+        text-align: right;
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .navbar-mobile.show {
+        display: flex;
+    }
+    .navbar-mobile .btn.signup {
+        background-color: blue; /* Button color */
+    }
+
+    .navbar-mobile .btn.login {
+        background-color: green; /* Button color */
+    }
+
+    .navbar-mobile .btn {
+        border-radius: 30px;
+        width: 20%; /* Full width for mobile */
+        margin: 10px auto; /* Center buttons */
+    }
+}

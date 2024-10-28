@@ -1,9 +1,9 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "root"; // Change as needed
-$password = ""; // Change as needed
-$dbname = "your_database"; // Change as needed
+$username = "root"; // default - username
+$password = ""; // default - no password
+$dbname = "app_entry"; // database name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+    // querying the table app_entry
+    $stmt = $conn->prepare("SELECT id, password FROM app_entry WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -27,12 +28,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $id; // Store user ID in session
             echo "<script>alert('Login successful!'); window.location.href='../html/dashboard.html';</script>";
-        } else {
-            echo "<script>alert('Wrong username or password, try again.');</script>";
+        } else 
+
+        exit();
+
+        {
+            // Invalid password, redirect to login page with an error message
+            header("Location: ../html/login.html?error=invalid_password");
+            exit();
         }
     } else {
-        echo "<script>alert('Wrong username or password, try again.');</script>";
+        // No user found, redirect to login page with an error message
+        header("Location: ../html/login.html?error=no_user");
+        exit();
     }
+
     $stmt->close();
 }
 

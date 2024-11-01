@@ -117,26 +117,6 @@ nav {
     display: flex; /* Use flexbox */
     justify-content: center; /* Center buttons */
 }
-/* css stylings for the class bubbles , they should be animated bouncing and distributed on the screen  */
-.bubbles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10;
-    height: 10;
-    background: #f5f5f5; /* Default background color */
-    animation: bounce 2s ease-in-out infinite; /* Animation */
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
 .floating-btn {
     padding: 15px 20px;
     border-radius: 50px;
@@ -145,6 +125,33 @@ nav {
     color: white;
 }
 
+/* bubble animation */
+:root {
+    --bubble-color-light: rgb(214, 207, 207);
+    --bubble-color-dark: #b6aba8; /* Example darker shade */
+    --bubble-hover-color-light: rgb(173, 79, 169);
+    --bubble-hover-color-dark: #2196F3; /* Example darker blue */
+}
+.bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bubble-color-light);
+    border-radius: 50%;
+    animation: breathe 3s infinite;
+    transition: background-color 0.3s;
+}
+body.dark-mode .bubble {
+    background-color: var(--bubble-color-dark);
+}
+
+body.dark-mode .bubble:hover {
+    background-color: var(--bubble-hover-color-dark);
+}
+
+.bubble:hover {
+    background-color: var(--bubble-hover-color-light);
+}
 /* hide on big  screen */
 .navbar-mobile{
     visibility: hidden;

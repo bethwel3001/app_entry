@@ -77,6 +77,8 @@ body.dark-theme .btn {
 }
 form {
     border-radius: 25px solid #23830b;
+    display: flex;
+    flex-direction: column;
     /* background: #4d2a2a; */
     padding: 20px;
     border-radius: 5px;
@@ -97,13 +99,14 @@ button {
     background: #5cb85c;
     color: white;
     padding: 10px;
+    width: 80px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #4cae4c;
+    background: #9244aa;
 }
 
 #message {

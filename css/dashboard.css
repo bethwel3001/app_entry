@@ -1,0 +1,104 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+}
+
+/* Left Side - Tabs */
+.tabs {
+    width: 15%;
+    background-color: #2c3e50;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Tab Items */
+.tab-item {
+    margin-bottom: 20px;
+}
+
+.tab-item h2, .tab-item a {
+    color: white;
+    font-size: 18px;
+}
+
+.tab-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.tab-item i {
+    margin-right: 10px;
+}
+
+.tab-item:hover {
+    background-color: #34495e;
+}
+
+/* Right Side - Profile Info */
+.profile-info {
+    width: 75%;
+    padding: 30px;
+}
+
+/* Welcome message */
+.welcome-message {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: #2980b9;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Profile Info Text */
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}

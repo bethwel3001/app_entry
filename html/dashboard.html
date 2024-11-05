@@ -1,14 +1,66 @@
-
+<!-- dashboard redirected to after succesfull login/sign up -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- <title>welcome|Dashboard</title> -->
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-    <h1>Welcome to your Dashboard!</h1>
-    <p>This is where you can manage your account.</p>
-    <a href="../php/logout.php">Logout</a>
+    <div class="dashboard-container">
+        <!-- Left Side: Tabs -->
+        <div class="tabs">
+            <div class="tab-item">
+                <h2>Welcome, <span id="username">User</span></h2>
+            </div>
+            <div class="tab-item">
+                <div class="profile">
+                    <i class="fas fa-user-circle"></i> <span id="username">User</span>
+                </div>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-cogs"></i> <a href="settings.php">Settings</a>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-sign-out-alt"></i> <a href="../php/logout.php">Logout</a>
+            </div>
+        </div>
+
+        <!-- Right Side: Profile Info -->
+        <div class="profile-info">
+            <div id="welcomeMessage" class="welcome-message">Welcome to your Dashboard!</div>
+            <div class="profile-section">
+                <img id="profilePic" src="default-profile.png" alt="Profile Picture" class="profile-img">
+                <button id="updateProfilePicBtn">Update Profile Picture</button>
+                <p>Edit your <a href="account-settings.php">account info</a> or update your profile image.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Get the username from the session or database
+    let username = "John Doe";  // This would be dynamically populated from the server
+    document.getElementById('username').textContent = username;
+    
+    // Display the "Welcome to your Dashboard!" message for 3 seconds
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    welcomeMessage.style.display = "block";
+    
+    setTimeout(function() {
+        welcomeMessage.style.display = "none";
+    }, 3000);
+
+    // Handle the profile image update button
+    const updateProfilePicBtn = document.getElementById('updateProfilePicBtn');
+    updateProfilePicBtn.addEventListener("click", function() {
+        alert("You can add an upload functionality for profile pic here.");
+        // This could trigger a file input or open a modal for updating the image
+    });
+});
+
+    </script>
 </body>
 </html>

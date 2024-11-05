@@ -59,8 +59,15 @@ After submitting the form, you can check the users table in your MySQL database 
 
 ## Screenshots
 Landing Page: Light and Dark Mode Toggle
+![image](https://github.com/user-attachments/assets/03cf2d24-e82a-41f4-9375-d3b7d8673658)
 
 Example form submission
+![image](https://github.com/user-attachments/assets/a74e9fd6-7fac-47bc-97b9-23fdda3ef4b2)
+
+Small screen compatibility
+![image](https://github.com/user-attachments/assets/c08d08e9-2272-4d94-bd9c-2c8fdda1132a)
+![image](https://github.com/user-attachments/assets/b3eb3309-2e9a-4eab-b21a-a58e8e82a632)
+
 ## License
 This project is open-source and free to use. You can modify and distribute it according to your needs.
 

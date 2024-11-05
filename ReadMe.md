@@ -63,3 +63,5 @@ Landing Page: Light and Dark Mode Toggle
 Example form submission
 ## License
 This project is open-source and free to use. You can modify and distribute it according to your needs.
+
+## By Dev. Bethwel & NextSpace

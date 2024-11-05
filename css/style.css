@@ -124,7 +124,11 @@ nav {
     text-decoration: none;
     color: white;
 }
-
+.floating-btn:hover{
+    background-color: #333;
+    animation: pulse 2s infinite;
+    border-radius: 35px;
+}
 /* bubble animation */
 :root {
     --bubble-color-light: rgb(214, 207, 207);
@@ -134,8 +138,9 @@ nav {
 }
 .bubble {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
     background-color: var(--bubble-color-light);
     border-radius: 50%;
     animation: breathe 3s infinite;
